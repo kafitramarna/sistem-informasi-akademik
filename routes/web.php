@@ -9,3 +9,4 @@ Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name(
 Route::post('/pengumuman/store', [PengumumanController::class, 'store'])->name('pengumuman.store');
 Route::get('/pengumuman/{id}/edit', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
 Route::put('/pengumuman/{id}/update', [PengumumanController::class, 'update'])->name('pengumuman.update');
+
