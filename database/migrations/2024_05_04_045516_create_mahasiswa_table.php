@@ -17,7 +17,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('nim');
                 $table->string('nama');
-                $table->string('prodi');
+                $table->bigInteger('prodi_id');
                 $table->string('email')->nullable();
                 $table->string('password');
                 $table->timestamps();

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
@@ -18,5 +19,7 @@ Route::post('/prodi/store',[ProdiController::class,'store'])->name('prodi.store'
 Route::get('/prodi/{id}/edit',[ProdiController::class,'edit'])->name('prodi.edit');
 Route::put('/prodi/{id}/update',[ProdiController::class,'update'])->name('prodi.update');
 Route::delete('/prodi/{id}/destroy',[ProdiController::class,'destroy'])->name('prodi.destroy');
+
+Route::resource('mahasiswa', MahasiswaController::class);
 
 Route::get('/login',[AuthController::class, 'login'])->name('login');
