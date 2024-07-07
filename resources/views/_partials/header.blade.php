@@ -8,11 +8,21 @@
           "></span>
             </div>
             <div class="col">
-                <h2 class="page-title">Kafitra Marna Ibrahim</h2>
+                <h2 class="page-title">{{ Auth::guard(session('role'))->user()->nama }}</h2>
                 <div class="page-subtitle">
                     <div class="row">
-                        <div class="col-auto">C2C022107</div>
-                        <div class="col-auto">S1 Informatika</div>
+                        <div class="col-auto">
+                            {{ Auth::guard(session('role'))->user()->{session('role') == 'mahasiswa' ? 'nim' : 'nik'} }}
+                        </div>
+                        <div class="col-auto">
+                            @if (session('role') == 'mahasiswa')
+                                {{ Auth::guard('mahasiswa')->user()->prodi->nama }}
+                            @else
+                            {{ ucwords(session('role')) }}
+                            @endif
+
+                        </div>
+
                     </div>
                 </div>
             </div>

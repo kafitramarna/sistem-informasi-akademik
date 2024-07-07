@@ -11,7 +11,9 @@
                 <div class="card-header">
                     <h3 class="card-title">Pengumuman</h3>
                     <div class="text-end w-100">
+                        @if(session('role') == 'admin')
                         <a href="{{ route('pengumuman.create') }}" class="btn btn-primary">Tambah Pengumuman</a>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body">
@@ -22,10 +24,12 @@
                                     <th>No</th>
                                     <th>Pengumuman Dan Panduan</th>
                                     <th>Link</th>
+                                    @if(session('role') == 'admin')
                                     <th class="text-center">Dosen</th>
                                     <th class="text-center">Mahasiswa</th>
                                     <th class="text-center">Status</th>
                                     <th></th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +38,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $pengumuman->nama }}</td>
                                         <td><a href="{{ $pengumuman->url }}">Link</a></td>
+                                        @if(session('role') == 'admin')
                                         <td class="text-center">
                                             @if ($pengumuman->is_dosen)
                                                 <i class="fa-solid fa-check"></i>
@@ -54,6 +59,7 @@
                                                 <button class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>

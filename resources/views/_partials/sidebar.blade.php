@@ -12,5 +12,12 @@
         <div class="collapse navbar-collapse" id="sidebar-menu">
             @include('_partials.menu')
         </div>
+        <hr class="navbar-divider my-3">
+        <div class="mb-3 text-center">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf   
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        </div>
     </div>
 </aside>

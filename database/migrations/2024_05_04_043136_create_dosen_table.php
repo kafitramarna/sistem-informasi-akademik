@@ -17,6 +17,8 @@ return new class extends Migration
                 $table->string('nik');
                 $table->string('nidn');
                 $table->string('nama');
+                $table->string('gelar_depan')->nullable();
+                $table->string('gelar_belakang')->nullable();
                 $table->string('email')->nullable();
                 $table->string('password');
                 $table->timestamps();
