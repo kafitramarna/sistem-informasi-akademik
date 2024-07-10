@@ -14,10 +14,12 @@
         </div>
         <hr class="navbar-divider my-3">
         <div class="mb-3 text-center">
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf   
-                <button type="submit" class="btn btn-danger">Logout</button>
-            </form>
+            {{-- <form action="{{ route('logout') }}" method="POST">
+                @csrf    --}}
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalOut">
+                    Logout
+                </button>
+            {{-- </form> --}}
         </div>
     </div>
 </aside>

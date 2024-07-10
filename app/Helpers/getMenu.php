@@ -10,7 +10,7 @@ if (!function_exists('getMenu')) {
         }else if(session('role') == 'dosen'){
             $menu = Menu::where('is_dosen',1)->where('is_active',1)->get();
         }else{
-            $menu = Menu::all();
+            $menu = Menu::where('is_admin',1)->where('is_active',1)->get();
         }
         return $menu;
     }
